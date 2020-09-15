@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "apacaks01-b340"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "apacaks01-b340"
+  template:
+    metadata:
+      labels:
+        app: "apacaks01-b340"
+    spec:
+      containers:
+        - name: "apacaks01-b340"
+          image: "acrapacgh.azurecr.io/apacaks01"
+          ports:
+          - containerPort: 80
