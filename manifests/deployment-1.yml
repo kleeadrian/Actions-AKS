@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akseurope01demo-e528"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akseurope01demo-e528"
+  template:
+    metadata:
+      labels:
+        app: "akseurope01demo-e528"
+    spec:
+      containers:
+        - name: "akseurope01demo-e528"
+          image: "acraks01adrian.azurecr.io/akseurope01demo"
+          ports:
+          - containerPort: 80
